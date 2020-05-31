@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>
+    Client
+</title>
+<style>
+body
+{
+font-family: Arial, Helvetica, sans-serif;
+ background-image: linear-gradient(white, #F4F8F8);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+  <div class="w3-bar w3-black">
+    <a href="afterloginclient" class="w3-bar-item w3-button">Home</a>
+    <a href="#" class="w3-bar-item w3-button">Profile</a>
+    <a href="#" class="w3-bar-item w3-button">Notifications</a>
+    <a href="loginclient" class="w3-bar-item w3-button">Logout</a>
+  </div>
+  <div class="container">
+   
+    <h1>Client details</h1>
+    
+    <table>
+      
+      {% for dest in dests %}
+      <tr>
+        <td >
+          {% if dest.name == current_user%}
+          Name:{{dest.name}}<br>
+          Email:{{dest.email}}<br>
+          <!-- <button onclick="window.location.href ='media/{{dest.upload}}' ">resume</button>
+          {{dest.upload}} -->
+          Phone:{{dest.mobile}}<br>
+          Company:{{dest.notification}} has accepted your contract ,You can contact them.
+          {% endif %}
+          <br>
+        </td> 
+      </tr>
+      {% endfor %}
+    </table>
+
+    
+    {% for m in messages%}
+    <h1>
+      {{m}}
+      </h1>
+      {% endfor %}
+    
+  </div>
+ 
+<div class="mes">
+  {% for m in messeges %}
+  <h1>
+    {{m}}
+    </h1>
+    {% endfor %}
+</div>
+  <div class="container">
+    {% for i in l%}
+        <h1>
+            {{i}}<br>
+        </h1>
+    {% endfor %}
+  </div>
+  
+  
+</form>
+
+</body>
+</html>
